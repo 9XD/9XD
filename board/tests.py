@@ -1,3 +1,8 @@
-from django.test import TestCase
+from test_plus.test import TestCase
 
-# Create your tests here.
+
+class BoardTest(TestCase):
+    def test_get_board_list(self):
+        board_list_url = self.reverse("board:list")
+        self.get_check_200(board_list_url)
+
