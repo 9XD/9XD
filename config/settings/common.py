@@ -47,6 +47,7 @@ LOCAL_APPS = (
     # custom users app
     'ninexd.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'common',
     'notice',
     'blog',
     'board',
