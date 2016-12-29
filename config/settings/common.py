@@ -50,7 +50,7 @@ LOCAL_APPS = (
     'common.apps.CommonConfig',
     'notice.apps.NoticeConfig',
     'posts.apps.PostsConfig',
-    'schedule.ScheduleConfig',
+    'schedule.apps.ScheduleConfig',
     'mailing.apps.MailingConfig',
 )
 
