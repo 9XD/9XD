@@ -52,7 +52,7 @@ LOCAL_APPS = (
     'blog',
     'board',
     'schedule',
-    'mailing,'
+    'mailing',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
