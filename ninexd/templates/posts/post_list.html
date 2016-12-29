@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row">
+    {% for post in posts %}
+      <div class="col-md-12">
+        <h1>{{ post.title }}</h1>
+        {{ post.author.name }}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+

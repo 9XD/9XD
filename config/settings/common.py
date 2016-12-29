@@ -49,8 +49,7 @@ LOCAL_APPS = (
     # Your stuff: custom apps go here
     'common',
     'notice',
-    'blog',
-    'board',
+    'posts',
     'schedule',
     'mailing',
 )
