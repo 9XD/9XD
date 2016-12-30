@@ -6,4 +6,4 @@ class HomeTest(TestCase):
         home_url = self.reverse('home')
         self.get_check_200(home_url)
         self.assertResponseContains('<title>9XD</title>')
-
+        self.assertResponseContains('Posts', html=False)

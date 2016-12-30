@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="row">
+    <a href="{% url 'post:create' %}">글쓰기</a>
+  </div>
+  <div class="row">
     {% for post in posts %}
       <div class="col-md-12">
         <h1>{{ post.title }}</h1>

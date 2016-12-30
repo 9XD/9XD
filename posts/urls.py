@@ -5,7 +5,13 @@ from . import views
 urlpatterns = [
     url(
         regex=r'^$',
-        view=views.PostListView.as_view(),
+        view=views.PostList.as_view(),
         name='list'
+    ),
+
+    url(
+        regex=r'^create$',
+        view=views.PostCreate.as_view(),
+        name='create'
     ),
 ]
