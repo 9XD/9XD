@@ -47,11 +47,11 @@ LOCAL_APPS = (
     # custom users app
     'ninexd.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'common',
-    'notice',
-    'posts',
-    'schedule',
-    'mailing',
+    'common.apps.CommonConfig',
+    'notice.apps.NoticeConfig',
+    'posts.apps.PostsConfig',
+    'schedule.apps.ScheduleConfig',
+    'mailing.apps.MailingConfig',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
