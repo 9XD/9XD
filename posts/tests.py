@@ -23,3 +23,12 @@ class PostsTest(TestCase):
 
     def test_get_writing_page_with_anonymous(self):
         self.assertLoginRequired('post:create')
+
+    def test_post_writing(self):
+        user = self.make_user('jelly jelly')
+        data = {"title", "This is some "}
+
+        with self.login(username=user.username):
+            write_post_url = self.reverse('post:create')
+            self.get_check_200(write_post_url)
+            self.post('post:write', data=data)

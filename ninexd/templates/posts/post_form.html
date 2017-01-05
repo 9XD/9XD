@@ -2,5 +2,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-   {% crispy form %}
+  <form action="{% url 'posts:create' %}" method="post">
+    {% csrf_token %}
+    {% crispy form %}
+    <button class="btn btn-primary" type="submit">Write</button>
+  </form>
 {% endblock %}
