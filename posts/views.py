@@ -1,10 +1,9 @@
-import re
-
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic import ListView
 
+from common.utils import split_tags
 from posts.forms import PostForm
 from posts.models import Post, Tag
 
@@ -25,15 +24,17 @@ class PostCreate(LoginRequiredMixin, CreateView):
         title = form.cleaned_data['title']
         content = form.cleaned_data['content']
         tags_text = form.cleaned_data['tags']
-        split_tags = re.split(',\s|,|\s', tags_text)
+
+        tag_names = split_tags(tags_text)
         tags = []
-        for tag_name in split_tags:
+        for tag_name in tag_names:
             try:
                 tag = Tag.objects.get(name=tag_name)
             except Tag.DoesNotExist:
                 tag = Tag.objects.create(name=tag_name)
+                tag.save()
             tags.append(tag)
 
         Post.objects.create(
-            author=author, title=title, content=content)
-        super.form_valid(form)
+            author=author, title=title, content=content, tags=tags)
+        super(CreateView, self).form_valid(form)
