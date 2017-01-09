@@ -14,9 +14,12 @@ class NoticeTest(TestCase):
         # given
         for _ in range(20):
             NoticeFactory()
+        notice = NoticeFactory()
         # when, then
         self.get_check_200(reverse('notice:list'))
         self.assertResponseContains(NoticeFactory.title, html=False)
+        detail_url = reverse('notice:detail', kwargs={'pk': notice.pk})
+        self.assertResponseContains(detail_url, html=False)
 
     def test_get_detail_page(self):
         # given
