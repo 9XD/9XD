@@ -1,3 +1,15 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
+from django.views.generic import ListView
 
-# Create your views here.
+from notice.models import Notice
+
+
+class NoticeList(ListView):
+    model = Notice
+    context_object_name = 'notice_list'
+    paginate_by = 10
+
+
+class NoticeDetail(DetailView):
+    model = Notice
+    context_object_name = 'notice'

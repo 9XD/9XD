@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<article>
+  <h1>{{ notice.title }}</h1>
+  {% autoescape off %}
+  {{ notice.content }}
+  {% endautoescape %}
+</article>
+{% endblock %}
