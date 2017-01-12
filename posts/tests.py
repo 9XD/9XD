@@ -47,6 +47,3 @@ class PostsTest(TestCase):
         self.assertResponseContains(PostFactory.author)
         self.assertResponseContains(PostFactory.title)
         self.assertResponseContains(PostFactory.content)
-        pass
-
-
