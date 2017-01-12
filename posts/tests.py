@@ -30,7 +30,7 @@ class PostsTest(TestCase):
 
     def test_post_writing(self):
         # given
-        user = self.make_user('jelly jelly')
+        user = self.make_user('jelly_jelly')
         data = {"title", "This is some "}
         # when
         with self.login(username=user.username):
@@ -38,3 +38,15 @@ class PostsTest(TestCase):
             # then
             self.get_check_200(write_post_url)
             self.post('post:write', data=data)
+
+    def test_get_detail_page(self):
+        # given
+        PostFactory()
+        self.get_check_200('post:detail')
+        # when then
+        self.assertResponseContains(PostFactory.author)
+        self.assertResponseContains(PostFactory.title)
+        self.assertResponseContains(PostFactory.content)
+        pass
+
+
