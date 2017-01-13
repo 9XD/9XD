@@ -263,6 +263,6 @@ ADMIN_URL = r'^admin/'
 # ------------------------------------------------------------------------------
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 10,
-    'MARGIN_PAGES_DISPLAYED': 2,
+    'MARGIN_PAGES_DISPLAYED': 1,
     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
 }
