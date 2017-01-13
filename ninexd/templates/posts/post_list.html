@@ -6,7 +6,9 @@
   <div class="row">
     {% for post in posts %}
       <div class="col-md-12">
-        <h1>{{ post.title }}</h1>
+        <a href="{% url 'posts:detail' post.pk %}">
+          <h1>{{ post.title }}</h1>
+        </a>
       </div>
     {% endfor %}
   </div>
