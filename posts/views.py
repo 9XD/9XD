@@ -31,3 +31,4 @@ class PostCreate(LoginRequiredMixin, CreateView):
 class PostDetail(DetailView):
     model = Post
     context_object_name = 'post'
+

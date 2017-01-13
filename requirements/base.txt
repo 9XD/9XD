@@ -53,3 +53,6 @@ django-pure-pagination==0.3.0
 
 # Markdown
 markdown2==2.3.2
+
+# django rest framework
+djangorestframework==3.5.3

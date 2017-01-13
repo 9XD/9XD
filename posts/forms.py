@@ -1,11 +1,17 @@
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm, CharField
+from django.forms import ModelForm, CharField, Textarea
 
 from common.utils import split_tags
 from posts.models import Post, Tag
 
 
 class PostForm(ModelForm):
+    content = CharField(widget=Textarea(
+        attrs={
+            ':value': 'input',
+            '@input': 'update'
+        }
+    ))
     tags = CharField()
 
     def clean_tags(self):
