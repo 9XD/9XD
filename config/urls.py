@@ -20,8 +20,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-                  url(r'^posts/', include('posts.urls', namespace='posts')),
-                  url(r'^notice/', include('notice.urls', namespace='notice')),
+    url(r'^posts/', include('posts.urls', namespace='posts')),
+    url(r'^notice/', include('notice.urls', namespace='notice')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
