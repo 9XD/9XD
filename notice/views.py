@@ -1,11 +1,11 @@
 from django.views.generic import DetailView
 from django.views.generic import ListView
+from pure_pagination import PaginationMixin
 
-from common.behaviors import LimitedPageMixin
 from notice.models import Notice
 
 
-class NoticeList(LimitedPageMixin, ListView):
+class NoticeList(PaginationMixin, ListView):
     model = Notice
     context_object_name = 'notice_list'
     paginate_by = 10
