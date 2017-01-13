@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView
+from django.views.generic import DetailView
 from django.views.generic import ListView
 
 from ninexd.users.models import User
@@ -24,3 +25,8 @@ class PostCreate(LoginRequiredMixin, CreateView):
         user = self.request.user
         form.cleaned_data['author'] = User.objects.get(username=user.username)
         return super(PostCreate, self).form_valid(form)
+
+
+class PostDetail(DetailView):
+    model = Post
+    context_object_name = 'post'
