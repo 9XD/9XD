@@ -16,15 +16,19 @@
         </a>
       </li>
     {% endif %}
-    {% for i in paginator.converted_range %}
-      {% if page_obj.number == i %}
-        <li class="page-item active">
-          <a href="#" class="page-link">
-            <span>{{ i }} <span class="sr-only">(current)</span></span>
-          </a>
-        </li>
+    {% for page in page_obj.pages %}
+      {% if page %}
+        {% if page_obj.number == page %}
+          <li class="page-item active">
+            <a href="#" class="page-link">
+              <span>{{ page }} <span class="sr-only">(current)</span></span>
+            </a>
+          </li>
+        {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+        {% endif %}
       {% else %}
-        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        <li class="page-item disabled"><a href="#" class="page-link">..</a></li>
       {% endif %}
     {% endfor %}
     {% if page_obj.has_next %}
