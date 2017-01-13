@@ -3,13 +3,14 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic import DetailView
 from django.views.generic import ListView
+from pure_pagination import PaginationMixin
 
 from ninexd.users.models import User
 from posts.forms import PostForm
-from posts.models import Post, Tag
+from posts.models import Post
 
 
-class PostList(ListView):
+class PostList(PaginationMixin, ListView):
     model = Post
     context_object_name = 'posts'
     paginate_by = 10

@@ -43,8 +43,10 @@ redis>=2.10.5
 
 
 
-rcssmin==1.0.6 
+rcssmin==1.0.6
 django-compressor==2.1
 
 
 # Your custom requirements go here
+# Pagination
+django-pure-pagination==0.3.0
