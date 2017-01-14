@@ -1,9 +1,6 @@
 /**
  * Created by jelly on 1/14/17.
  */
-
-
-
 const editorView = new Vue({
     el: '#editor',
     data: {
@@ -30,8 +27,6 @@ const editorView = new Vue({
                 }, function (response) {
                     response.data;
                 });
-
-
         },
     },
     methods: {
