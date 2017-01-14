@@ -7,7 +7,7 @@
 const editorView = new Vue({
     el: '#editor',
     data: {
-        input: '# hello',
+        input: '# Markdown editor',
         compiledMarkdown: ''
     },
     computed: {
