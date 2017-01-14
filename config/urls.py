@@ -22,9 +22,10 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^posts/', include('posts.urls', namespace='posts')),
     url(r'^notice/', include('notice.urls', namespace='notice')),
+    url(r'^common/', include('common.urls', namespace='common')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
