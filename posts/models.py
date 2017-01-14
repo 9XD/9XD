@@ -14,7 +14,8 @@ class Tag(models.Model):
 class Post(TimeStampedModel):
     author = models.ForeignKey(User)
     title = models.CharField(max_length=60)
-    content = models.TextField()
+    content = models.TextField(default='')
+    html = models.TextField(default='')
     views = models.IntegerField(default=0)
     is_public = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag)

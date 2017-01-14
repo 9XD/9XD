@@ -1,5 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm, CharField, Textarea
+from markdown2 import Markdown
 
 from common.utils import split_tags
 from posts.models import Post, Tag
@@ -28,8 +29,9 @@ class PostForm(ModelForm):
         author = self.cleaned_data['author']
         title = self.cleaned_data['title']
         content = self.cleaned_data['content']
-
-        post = Post(author=author, title=title, content=content)
+        markdown = Markdown()
+        html = markdown.convert(content)
+        post = Post(author=author, title=title, content=content, html=html)
         post.save()
 
         tags_text = self.cleaned_data['tags']
