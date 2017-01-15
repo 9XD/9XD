@@ -12,11 +12,10 @@ Production Configurations
 """
 from __future__ import absolute_import, unicode_literals
 
-from boto.s3.connection import OrdinaryCallingFormat
-from django.utils import six
-
 import logging
 
+from boto.s3.connection import OrdinaryCallingFormat
+from django.utils import six
 
 from .common import *  # noqa
 
@@ -222,3 +221,11 @@ ADMIN_URL = env('DJANGO_ADMIN_URL')
 
 # Your production stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+# allauth social login
+INSTALLED_APPS += (
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.google',
+)
