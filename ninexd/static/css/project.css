@@ -45,7 +45,7 @@ html, body, #editor {
   color: #333;
 }
 
-textarea, #editor div {
+textarea#id_content, #editor div {
   display: inline-block;
   width: 49%;
   height: 100%;
@@ -54,7 +54,7 @@ textarea, #editor div {
   padding: 0 20px;
 }
 
-textarea {
+div#editor > textarea#id_content {
   border: none;
   border-right: 1px solid #ccc;
   resize: none;
