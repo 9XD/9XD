@@ -3,43 +3,9 @@
 
 {% block content %}
     <form action="{% url 'posts:create' %}" method="post">
-        {% csrf_token %}
-        <div id="div_id_title" class="form-group">
-            <label for="id_title" class="form-control-label  requiredField">
-                Title<span class="asteriskField">*</span>
-            </label>
-            <div class="">
-                <input class="textinput textInput form-control" id="id_title" maxlength="60" name="title" type="text"
-                       required="">
-            </div>
-        </div>
-        <div id="div_id_content" class="form-group">
-            <label for="id_content" class="form-control-label  requiredField">
-                Content<span class="asteriskField">*</span>
-            </label>
-            <div id="editor" class="">
-                <textarea :value="input" @input="update" id="id_content" name="content" required=""></textarea>
-                <div v-html="compiledMarkdown"></div>
-              <div v-html="compiler" v-show="false"></div>
-            </div>
-        </div>
-        <div id="div_id_tags" class="form-group">
-            <label for="id_tags" class="form-control-label  requiredField">
-                Tags<span class="asteriskField">*</span>
-            </label>
-            <div class="">
-                <input class="textinput textInput form-control" id="id_tags" name="tags" type="text" required="">
-            </div>
-        </div>
-        <div class="form-group">
-            <div id="div_id_is_public" class="checkbox">
-                <label for="id_is_public" class="">
-                    <input checked="checked" class="checkboxinput" id="id_is_public" name="is_public" type="checkbox">
-                    Is public
-                </label>
-            </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Write</button>
+      {% csrf_token %}
+      {{ form | crispy }}
+      <button class="btn btn-primary" type="submit">Write</button>
     </form>
 {% endblock %}
 
