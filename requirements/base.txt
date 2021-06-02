@@ -52,7 +52,7 @@ django-compressor==2.1
 django-pure-pagination==0.3.0
 
 # Markdown
-markdown2==2.3.2
+markdown2==2.4.0
 
 # django rest framework
 djangorestframework==3.5.3
